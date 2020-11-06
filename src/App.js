@@ -3,14 +3,17 @@ import './App.css';
 
 class Helloworld extends React.Component {
   state = {
-    show: false
+    show: true
   }
 
   render() {
     if(this.state.show){
       return (
         <div id="hello">
-          <h3>{this.props.subtitle}</h3>
+          <h3>{this.props.mytext}</h3>
+          {this.props.subtitle}
+          <br/>
+          <button onClick={ () => alert('work')}>Hide</button>
         </div>
       )
     } else {
