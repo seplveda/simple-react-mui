@@ -1,9 +1,18 @@
 import React, { Component} from 'react';
 
 class Task extends Component {
+
+    StyleCompleted() {
+        return {
+            fontSize: '20px',
+            color: this.props.task.done ? 'gray' : 'black',
+            textDecoration: 'none'
+        }
+    }
+
     render() {
         const {task} = this.props;
-        return <div>
+        return <p style={this.StyleCompleted()}>
             {task.title} - 
             {task.description} -
             {task.done} -
@@ -12,7 +21,7 @@ class Task extends Component {
             <button style={btnDelete}>
                 x
             </button>
-        </div>
+        </p>
     }
 }
 
