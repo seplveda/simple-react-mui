@@ -2,17 +2,28 @@ import React, { Component} from 'react';
 
 class Task extends Component {
     render() {
+        const {task} = this.props;
         return <div>
-            {this.props.task.title} - 
-            {this.props.task.title} -
-            {this.props.task.title} -
-            {this.props.task.title}
+            {task.title} - 
+            {task.description} -
+            {task.done} -
+            {task.id}
             <input type ="checkbox"/>
-            <button>
+            <button style={btnDelete}>
                 x
             </button>
         </div>
     }
+}
+
+const btnDelete = {
+    fontSize: '18px',
+    background: '#ea2027',
+    color: '#fff',
+    border: 'none',
+    padding: '10px 15px',
+    borderRadius: '50%',
+    cursor: 'pointer'
 }
 
 export default Task;
