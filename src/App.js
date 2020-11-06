@@ -7,7 +7,7 @@ class Helloworld extends React.Component {
   }
 
   toggleShow = () => {
-    this.setState({show: false})
+    this.setState({show: !this.state.show})
   }
 
   render() {
@@ -17,12 +17,18 @@ class Helloworld extends React.Component {
           <h3>{this.props.mytext}</h3>
           {this.props.subtitle}
           <br/>
-          <button onClick={this.toggleShow}>Hide</button>
+          <button onClick={this.toggleShow}>Hi!</button>
         </div>
       )
     } else {
       return (
-        <h3>:(</h3>
+        <div id="hello">
+          <h3>
+            :(
+          </h3>
+          <br/>
+          <button onClick={this.toggleShow}>sad</button>
+        </div>
       )
     }
   }
