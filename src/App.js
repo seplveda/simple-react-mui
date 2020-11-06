@@ -12,7 +12,9 @@ class App extends Component {
 
   render() {
     return <div>
-      { this.state.tasks.map( e => <h1>{e.title}</h1>) }
+      { this.state.tasks.map( e => <p>
+        {e.title} - {e.description} - {e.done} - {e.id}
+      </p>) }
     </div>
   }
 }
