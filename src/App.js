@@ -6,6 +6,10 @@ class Helloworld extends React.Component {
     show: true
   }
 
+  toggleShow() {
+    this.setState({show: false})
+  }
+
   render() {
     if(this.state.show){
       return (
@@ -13,7 +17,7 @@ class Helloworld extends React.Component {
           <h3>{this.props.mytext}</h3>
           {this.props.subtitle}
           <br/>
-          <button onClick={ () => alert('work')}>Hide</button>
+          <button onClick={this.toggleShow.bind(this)}>Hide</button>
         </div>
       )
     } else {
