@@ -6,7 +6,7 @@ class Task extends Component {
         return {
             fontSize: '20px',
             color: this.props.task.done ? 'gray' : 'black',
-            textDecoration: 'none'
+            textDecoration: this.props.task.done ? 'line-through' : 'none'
         }
     }
 
