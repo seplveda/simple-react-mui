@@ -1,13 +1,24 @@
 import React from 'react';
 import './App.css';
 
-function Helloworld(props) {
-  return (
-    <div id="hello">
-      <h3>{props.subtitle}</h3>
-      {props.mytext}
-    </div>
-  )
+class Helloworld extends React.Component {
+  state = {
+    show: false
+  }
+
+  render() {
+    if(this.state.show){
+      return (
+        <div id="hello">
+          <h3>{this.props.subtitle}</h3>
+        </div>
+      )
+    } else {
+      return (
+        <h3>:(</h3>
+      )
+    }
+  }
 }
 
 function App() {
