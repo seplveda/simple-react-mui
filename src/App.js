@@ -6,7 +6,7 @@ import tasks from './sample/task.json';
 //Componenetes
 import Tasks from './components/Tasks';
 import TaskForm from './components/TaskForm';
-import Posts from './components/Posts';
+//import Posts from './components/Posts';
 
 
 class App extends Component {
@@ -50,8 +50,7 @@ class App extends Component {
         tasks={this.state.tasks} 
         deleteTask={this.deleteTask} 
         checkDone={this.checkDone}/>
-      <Posts/>
-      
+
     </div>
   }
 }
