@@ -10,6 +10,7 @@ class Tasks extends Component {
             task={task} 
             key={task.id}
             deleteTask={this.props.deleteTask}
+            checkDone={this.props.checkDone}
         />);
     }
 }
