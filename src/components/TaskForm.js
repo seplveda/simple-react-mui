@@ -8,7 +8,9 @@ export default class TaskForm extends Component {
                 <br/>
                 <br/>
                 <textarea placeholder="Descripción de la tarea"/>
-                <input type="submit"/>
+                <button type="submit">
+                    Agregar tarea
+                </button>
             </form>
 
         )
