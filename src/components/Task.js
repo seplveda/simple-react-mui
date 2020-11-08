@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
+import { Button } from '@material-ui/core';
 
 class Task extends Component {
 
@@ -19,25 +20,19 @@ class Task extends Component {
             {task.done} -
             {task.id}
             <input type ="checkbox" onChange={this.props.checkDone.bind(this, task.id)}/>
-            <button style={btnDelete} onClick={this.props.deleteTask.bind(this, task.id)}>
+            <Button  
+                color='secondary' 
+                onClick={this.props.deleteTask.bind(this, task.id)}
+                variant='contained'
+                >
                 x
-            </button>
+            </Button>
         </p>
     }
 }
 
 Task.propTypes = {
     task: PropTypes.object.isRequired
-}
-
-const btnDelete = {
-    fontSize: '18px',
-    background: '#ea2027',
-    color: '#fff',
-    border: 'none',
-    padding: '10px 15px',
-    borderRadius: '50%',
-    cursor: 'pointer'
 }
 
 export default Task;
