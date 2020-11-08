@@ -1,6 +1,13 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemText from '@material-ui/core/ListItemText';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class Task extends Component {
 
@@ -15,18 +22,27 @@ class Task extends Component {
     render() {
         const {task} = this.props;
         return <p style={this.StyleCompleted()}>
-            {task.title} - 
-            {task.description} -
-            {task.done} -
-            {task.id}
-            <input type ="checkbox" onChange={this.props.checkDone.bind(this, task.id)}/>
-            <Button  
-                color='secondary' 
-                onClick={this.props.deleteTask.bind(this, task.id)}
-                variant='contained'
-                >
-                x
-            </Button>
+            <Card variant="outlined">
+                <CardContent onClick={this.props.checkDone.bind(this, task.id)}>
+                    <List >
+                        <ListItem>
+                        <ListItemText
+                            primary={task.title}
+                            secondary={task.description}
+                        />
+                        <ListItemSecondaryAction>
+                            <IconButton 
+                                edge="end" 
+                                aria-label="delete"
+                                onClick={this.props.deleteTask.bind(this, task.id)}
+                                >
+                            <DeleteIcon />
+                            </IconButton>
+                        </ListItemSecondaryAction>
+                        </ListItem>
+                    </List>
+                </CardContent>
+            </Card>
         </p>
     }
 }
